@@ -3,24 +3,33 @@
 }
 body {
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0;
+	padding: 0;
 }
 .container {
 	margin: 20px auto;
 	width: 90%;
+	max-width: 1200px;
+	padding: 0 15px;
 }
 .content {
 	display: flex;
+	gap: 20px;
 }
 hr {
 	border: 1px solid #cb6040;
+	margin: 1rem 0;
 }
 header {
 	display: flex;
 	color: #133e87;
+	flex-wrap: wrap;
+	gap: 1rem;
 }
 .name,
 .category {
 	flex: 1;
+	min-width: 250px;
 }
 .category {
 	text-align: right;
@@ -35,7 +44,9 @@ header {
 	flex: 1;
 	background-color: #f2e5bf;
 	padding: 1.25em;
-	height: 20.25em;
+	height: auto;
+	min-height: 20.25em;
+	border-radius: 8px;
 }
 .hangman-draw .the-draw {
 	width: 3.75em;
@@ -49,6 +60,26 @@ header {
 @media (max-width: 991px) {
 	.content {
 		flex-direction: column;
+	}
+	.hangman-draw {
+		min-height: 15em;
+	}
+}
+@media (max-width: 768px) {
+	.container {
+		width: 95%;
+		padding: 0 10px;
+	}
+	.name,
+	.category {
+		text-align: center;
+		flex: 100%;
+	}
+}
+@media (max-width: 480px) {
+	.container {
+		width: 100%;
+		margin: 10px auto;
 	}
 }
 .hangman-draw .stand {
@@ -207,6 +238,14 @@ header {
 	cursor: pointer;
 	border-radius: 2px;
 }
+@media (max-width: 480px) {
+	.letters .letter-box {
+		width: 2.5rem;
+		height: 2.5rem;
+		font-size: 1.2em;
+		line-height: 2em;
+	}
+}
 .letters .letter-box.clicked {
 	background-color: #fd8b51;
 	opacity: 0.5;
@@ -219,8 +258,10 @@ header {
 	padding: 1.25em;
 	display: flex;
 	justify-content: center;
+	flex-wrap: wrap;
 	gap: 0.8em;
 	min-height: 6.5em;
+	border-radius: 8px;
 }
 .guess span {
 	width: 3em;
@@ -234,6 +275,14 @@ header {
 	color: #a85035;
 	border-bottom: 4px solid #cb6040;
 	transition: 0.3s;
+}
+@media (max-width: 480px) {
+	.guess span {
+		width: 2.5em;
+		height: 2.5em;
+		line-height: 2.5em;
+		font-size: 1.2em;
+	}
 }
 .guess span.has-space {
 	background: none;
@@ -256,6 +305,7 @@ header {
 	color: #cb6040;
 	padding: 6.25rem 1.25rem;
 	width: 80%;
+	max-width: 600px;
 	text-align: center;
 	font-weight: bold;
 	top: 50%;
@@ -263,6 +313,21 @@ header {
 	transform: translate(-50%, -50%);
 	font-size: 2.5em;
 	border: 2px solid #cb6040;
+	border-radius: 8px;
+}
+@media (max-width: 768px) {
+	.popup {
+		width: 90%;
+		padding: 4rem 1rem;
+		font-size: 2em;
+	}
+}
+@media (max-width: 480px) {
+	.popup {
+		width: 95%;
+		padding: 3rem 0.8rem;
+		font-size: 1.5em;
+	}
 }
 .popup span {
 	display: block;
@@ -278,7 +343,12 @@ header {
 	cursor: pointer;
 	font-size: 16px;
 }
-
+@media (max-width: 480px) {
+	.popup button {
+		padding: 8px 16px;
+		font-size: 14px;
+	}
+}
 .popup button:hover {
 	background-color: #b94725;
 }
