@@ -198,7 +198,11 @@ document.addEventListener("click", (e) => {
 function winGame() {
 	let div = document.createElement("div");
 	let divTxt = document.createTextNode(
-		`Congratulations! You Won! The Word Was === ${randomWord.toUpperCase()} ===`,
+		`Congratulations! You guessed it right and ${
+			wrongAttempts
+				? `have ${wrongAttempts} wrong attempts`
+				: `You didn't miss a shot`
+		}`,
 	);
 	div.appendChild(divTxt);
 	div.className = "popup";
