@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="main.css" />
+		<title>HangMan Game</title>
+	</head>
+	<body>
+		<div class="container">
+			<header class="info">
+				<h2 class="name">Hangman</h2>
+				<div class="category">Word From: <span></span></div>
+			</header>
+			<hr />
+			<section class="content">
+				<div class="hangman-draw">
+					<div class="the-draw">
+						<div class="stand"></div>
+						<div class="hang"></div>
+						<div class="rope"></div>
+						<div class="the-man">
+							<div class="head"></div>
+							<div class="body"></div>
+							<div class="arms"></div>
+							<div class="legs"></div>
+						</div>
+					</div>
+				</div>
+				<div class="letters"></div>
+			</section>
+			<hr />
+			<section class="guess"></section>
+		</div>
+		<audio
+			id="success"
+			src="audio/success.mp3"
+			preload="auto"></audio>
+		<audio
+			id="fail"
+			src="audio/fail.mp3"
+			preload="auto"></audio>
+		<script src="index.js"></script>
+	</body>
+</html>
